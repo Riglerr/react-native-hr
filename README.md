@@ -1,6 +1,7 @@
 # react-native-hr
 
-react-native-hr brings htmls' `<hr />` to react-native. <br />
+=========
+react-native-hr brings htmls'  `<hr />`  to react-native. <br />
 It also brings some extra functionality:
   <ul>
     <li>Overayling text onto the line.</li>
@@ -8,7 +9,7 @@ It also brings some extra functionality:
     <li>Changing line colour.</li>
   </ul>
 
-# props
+## Props
 <table>
   <th>
     <tr>
@@ -35,3 +36,26 @@ It also brings some extra functionality:
     </tr>
   </tbody>
 </table>
+
+## Usage
+
+#### Solid Line
+`
+  <Hr lineColor='#b3b3b3'/>
+`
+
+#### Solid Line with text
+`
+  <Hr lineColor='#b3b3b3'
+      text='react-native'
+  />
+`
+
+#### Solid Line with text and textColor
+`
+  <Hr lineColor='#b3b3b3'
+      text='react-native'
+      textColor='steelblue'
+  />
+`
+[![Imgur](http://i.imgur.com/nLvVJnE.png)]
