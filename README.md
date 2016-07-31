@@ -52,10 +52,9 @@ It also brings some extra functionality:
 `
 
 #### Solid Line with text and textColor
-`
-  <Hr lineColor='#b3b3b3'
+`<Hr lineColor='#b3b3b3'
       text='react-native'
       textColor='steelblue'
-  />
-`
+  />`
+
 [![Imgur](http://i.imgur.com/nLvVJnE.png)]

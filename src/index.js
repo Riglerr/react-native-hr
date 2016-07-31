@@ -32,13 +32,13 @@ class Hr extends Component {
     this.renderInner = this.renderInner.bind(this);
   }
 
-  renderLine() {
-    return <View style={[styles.line, { backgroundColor: this.props.lineColor }]} />
+  renderLine(key) {
+    return <View key={key} style={[styles.line, { backgroundColor: this.props.lineColor }]} />
   }
 
-  renderText() {
+  renderText(key) {
     return (
-      <View style={styles.textContainer} >
+      <View key={key} style={styles.textContainer} >
         <Text style={[styles.text, { color: this.props.textColor }]}>{this.props.text}</Text>
       </View>
     )
@@ -49,9 +49,9 @@ class Hr extends Component {
       return this.renderLine()
     }
     return [
-      this.renderLine(),
-      this.renderText(),
-      this.renderLine()
+      this.renderLine(1),
+      this.renderText(2),
+      this.renderLine(3)
     ]
   }
 

@@ -53,15 +53,15 @@ var Hr = function (_Component) {
 
   _createClass(Hr, [{
     key: 'renderLine',
-    value: function renderLine() {
-      return _react2.default.createElement(_reactNative.View, { style: [styles.line, { backgroundColor: this.props.lineColor }] });
+    value: function renderLine(key) {
+      return _react2.default.createElement(_reactNative.View, { key: key, style: [styles.line, { backgroundColor: this.props.lineColor }] });
     }
   }, {
     key: 'renderText',
-    value: function renderText() {
+    value: function renderText(key) {
       return _react2.default.createElement(
         _reactNative.View,
-        { style: styles.textContainer },
+        { key: key, style: styles.textContainer },
         _react2.default.createElement(
           _reactNative.Text,
           { style: [styles.text, { color: this.props.textColor }] },
@@ -75,7 +75,7 @@ var Hr = function (_Component) {
       if (!this.props.text) {
         return this.renderLine();
       }
-      return [this.renderLine(), this.renderText(), this.renderLine()];
+      return [this.renderLine(1), this.renderText(2), this.renderLine(3)];
     }
   }, {
     key: 'render',
