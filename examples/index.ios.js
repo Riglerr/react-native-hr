@@ -27,8 +27,8 @@ class examples extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
-        <Hr text='Or'
-            lineColour='#b3b3b3'/>
+        <Hr
+            lineColor='#b3b3b3'/>
       </View>
     );
   }

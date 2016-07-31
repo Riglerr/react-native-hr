@@ -43,36 +43,48 @@ var Hr = function (_Component) {
   function Hr(props) {
     _classCallCheck(this, Hr);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(Hr).call(this, props));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Hr).call(this, props));
+
+    _this.renderLine = _this.renderLine.bind(_this);
+    _this.renderText = _this.renderText.bind(_this);
+    _this.renderInner = _this.renderInner.bind(_this);
+    return _this;
   }
 
   _createClass(Hr, [{
+    key: 'renderLine',
+    value: function renderLine() {
+      return _react2.default.createElement(_reactNative.View, { style: [styles.line, { backgroundColor: this.props.lineColor }] });
+    }
+  }, {
+    key: 'renderText',
+    value: function renderText() {
+      return _react2.default.createElement(
+        _reactNative.View,
+        { style: styles.textContainer },
+        _react2.default.createElement(
+          _reactNative.Text,
+          { style: [styles.text, { color: this.props.textColor }] },
+          this.props.text
+        )
+      );
+    }
+  }, {
+    key: 'renderInner',
+    value: function renderInner() {
+      if (!this.props.text) {
+        return this.renderLine();
+      }
+      return [this.renderLine(), this.renderText(), this.renderLine()];
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var hr = void 0;
-      if (!this.props.text) {
-        return _react2.default.createElement(
-          _reactNative.View,
-          { style: { flexDirection: 'row', alignItems: 'center', marginLeft: 8, marginRight: 8 } },
-          _react2.default.createElement(_reactNative.View, { style: [styles.line, { backgroundColor: this.props.lineColour }] })
-        );
-      } else {
-        return _react2.default.createElement(
-          _reactNative.View,
-          { style: { flexDirection: 'row', alignItems: 'center', marginLeft: 8, marginRight: 8 } },
-          _react2.default.createElement(_reactNative.View, { style: [styles.line, { backgroundColor: this.props.lineColour }] }),
-          _react2.default.createElement(
-            _reactNative.View,
-            { style: styles.textContainer },
-            _react2.default.createElement(
-              _reactNative.Text,
-              { style: styles.text },
-              this.props.text
-            )
-          ),
-          _react2.default.createElement(_reactNative.View, { style: [styles.line, { backgroundColor: this.props.lineColour }] })
-        );
-      }
+      return _react2.default.createElement(
+        _reactNative.View,
+        { style: { flexDirection: 'row', alignItems: 'center', marginLeft: 8, marginRight: 8 } },
+        this.renderInner()
+      );
     }
   }]);
 
@@ -80,7 +92,7 @@ var Hr = function (_Component) {
 }(_react.Component);
 
 Hr.propTypes = {
-  lineColor: _react.PropTypes.string,
+  lineColor: _react.PropTypes.string.isRequired,
   text: _react.PropTypes.string
 };
 

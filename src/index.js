@@ -27,32 +27,45 @@ class Hr extends Component {
   constructor(props) {
     super(props);
 
+    this.renderLine = this.renderLine.bind(this);
+    this.renderText = this.renderText.bind(this);
+    this.renderInner = this.renderInner.bind(this);
+  }
+
+  renderLine() {
+    return <View style={[styles.line, { backgroundColor: this.props.lineColor }]} />
+  }
+
+  renderText() {
+    return (
+      <View style={styles.textContainer} >
+        <Text style={[styles.text, { color: this.props.textColor }]}>{this.props.text}</Text>
+      </View>
+    )
+  }
+
+  renderInner() {
+    if (!this.props.text) {
+      return this.renderLine()
+    }
+    return [
+      this.renderLine(),
+      this.renderText(),
+      this.renderLine()
+    ]
   }
 
   render() {
-    let hr
-    if (!this.props.text) {
-      return (
-        <View style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 8, marginRight: 8 }}>
-          <View style={[styles.line, { backgroundColor: this.props.lineColour }]} />
-        </View>
-      )
-    } else {
-      return (
-        <View style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 8, marginRight: 8 }}>
-          <View style={[styles.line, { backgroundColor: this.props.lineColour }]} />
-          <View style={styles.textContainer} >
-            <Text style={styles.text}>{this.props.text}</Text>
-          </View>
-          <View style={[styles.line, { backgroundColor: this.props.lineColour }]} />
-        </View>
-      )
-    }
+    return (
+      <View style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 8, marginRight: 8 }}>
+        {this.renderInner() }
+      </View>
+    )
   }
 }
 
 Hr.propTypes = {
-  lineColor: PropTypes.string,
+  lineColor: PropTypes.string.isRequired,
   text: PropTypes.string
 };
 
