@@ -93,7 +93,8 @@ var Hr = function (_Component) {
 
 Hr.propTypes = {
   lineColor: _react.PropTypes.string.isRequired,
-  text: _react.PropTypes.string
+  text: _react.PropTypes.string,
+  textColor: _react.PropTypes.string
 };
 
 exports.default = Hr;

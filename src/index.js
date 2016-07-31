@@ -66,7 +66,8 @@ class Hr extends Component {
 
 Hr.propTypes = {
   lineColor: PropTypes.string.isRequired,
-  text: PropTypes.string
+  text: PropTypes.string,
+  textColor: PropTypes.string
 };
 
 export default Hr;
