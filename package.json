@@ -27,7 +27,8 @@
     "hr",
     "horizontal",
     "line",
-    "horizontal-line"
+    "horizontal-line",
+    "react-native-hr"
   ],
   "author": "Robert Rigler",
   "license": "ISC",
