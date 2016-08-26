@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput
+    StyleSheet,
+    Text,
+    View,
+    TextInput
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -38,9 +38,9 @@ class Hr extends Component {
 
   renderText(key) {
     return (
-      <View key={key} style={styles.textContainer} >
-        <Text style={[styles.text, { color: this.props.textColor }]}>{this.props.text}</Text>
-      </View>
+        <View key={key} style={styles.textContainer} >
+          <Text style={[styles.text, { color: this.props.textColor }]}>{this.props.text}</Text>
+        </View>
     )
   }
 
@@ -56,10 +56,12 @@ class Hr extends Component {
   }
 
   render() {
+    const { marginLeft, marginRight } = this.props;
+
     return (
-      <View style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 8, marginRight: 8 }}>
-        {this.renderInner() }
-      </View>
+        <View style={{ flexDirection: 'row', alignItems: 'center', marginLeft: {marginLeft}, marginRight: {marginRight} }}>
+          {this.renderInner() }
+        </View>
     )
   }
 }
@@ -67,7 +69,14 @@ class Hr extends Component {
 Hr.propTypes = {
   lineColor: PropTypes.string.isRequired,
   text: PropTypes.string,
-  textColor: PropTypes.string
+  textColor: PropTypes.string,
+  marginLeft: PropTypes.number,
+  marginRight: PropTypes.number
+};
+
+Hr.defaultProps = {
+  marginLeft: 8,
+  marginRight: 8
 };
 
 export default Hr;
