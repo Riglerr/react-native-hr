@@ -5,8 +5,8 @@ react-native-hr brings htmls'  `<hr />`  to react-native. <br />
 It also brings some extra functionality:
   <ul>
     <li>Overayling text onto the line.</li>
-    <li>Changing text colour.</li>
-    <li>Changing line colour.</li>
+    <li>Changing text style.</li>
+    <li>Changing line style.</li>
   </ul>
 
 ## Props
@@ -20,9 +20,9 @@ It also brings some extra functionality:
   </th>
   <tbody>
     <tr>
-      <td><code>lineColor<code></td>
-      <td><code>string<code></td>
-      <td><em>(Required)</em> The colour of the line.</td>
+      <td><code>lineStyle<code></td>
+      <td><code>Object<code></td>
+      <td><em>(Optional)</em> The style object for line(View).</td>
     </tr>
     <tr>
       <td><code>text<code></td>
@@ -30,9 +30,9 @@ It also brings some extra functionality:
       <td><em>(Optional)</em> The text to display on the line (centered) </td>
     </tr>
     <tr>
-      <td><code>textColor<code></td>
-      <td><code>string<code></td>
-      <td><em>(Optional)</em> The color of the text (defaults to black) </td>
+      <td><code>textStyle<code></td>
+      <td><code>Object<code></td>
+      <td><em>(Optional)</em> The color of the text</td>
     </tr>
   </tbody>
 </table>
@@ -40,21 +40,61 @@ It also brings some extra functionality:
 ## Usage
 
 #### Solid Line
-`
-  <Hr lineColor='#b3b3b3'/>
-`
+```
+  <Hr />
+```
 
-#### Solid Line with text
-`
-  <Hr lineColor='#b3b3b3'
-      text='react-native'
-  />
-`
+#### Line with left margin
+```
+  <Hr marginLeft={50} />
+```
 
-#### Solid Line with text and textColor
-`<Hr lineColor='#b3b3b3'
-      text='react-native'
-      textColor='steelblue'
-  />`
+#### Line with text
+```
+  <Hr text="react-native" />
+```
 
-[![Imgur](http://i.imgur.com/nLvVJnE.png)]
+
+#### Line with text and text style
+```
+  <Hr text="text style"
+      textStyle={{
+          color: "red", fontSize: 20,
+          textDecorationLine: "underline",
+          textDecorationStyle: "solid",
+          textDecorationColor: "#000"
+       }}
+   />
+```
+
+
+#### Line with line style
+```
+  <Hr text="line style"
+      lineStyle={{
+          backgroundColor: "blue",
+          height: 4
+       }}
+   />
+```
+
+
+#### Line style and text style
+```
+  <Hr lineColor='red' text='line style and text style'
+      lineStyle={{
+          backgroundColor: "blue",
+          height: 2
+       }}
+       textStyle={{
+          color: "green",
+          fontSize: 20,
+          textDecorationLine: "underline",
+          textDecorationStyle: "solid",
+          textDecorationColor: "#000"
+       }}
+    />
+```
+
+
+[![Imgur](https://github.com/priyesh9875/react-native-hr/blob/master/Screenshot_1483257401.png)
