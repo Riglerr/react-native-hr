@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactNative = require('react-native');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -90,11 +94,11 @@ var Hr = function (_Component) {
 }(_react.Component);
 
 Hr.propTypes = {
-    lineStyle: _react.PropTypes.shape({}),
-    text: _react.PropTypes.string,
-    marginLeft: _react.PropTypes.number,
-    marginRight: _react.PropTypes.number,
-    textStyle: _react.PropTypes.shape({})
+    lineStyle: _propTypes2.default.shape({}),
+    text: _propTypes2.default.string,
+    marginLeft: _propTypes2.default.number,
+    marginRight: _propTypes2.default.number,
+    textStyle: _propTypes2.default.shape({})
 };
 
 Hr.defaultProps = {

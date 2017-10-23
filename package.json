@@ -39,5 +39,8 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-rename": "^1.2.2"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0"
   }
 }
