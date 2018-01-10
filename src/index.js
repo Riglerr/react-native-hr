@@ -64,11 +64,11 @@ class Hr extends Component {
 }
 
 Hr.propTypes = {
-    lineStyle: PropTypes.shape({}),
+    lineStyle: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.number]),
     text: PropTypes.string,
     marginLeft: PropTypes.number,
     marginRight: PropTypes.number,
-    textStyle: PropTypes.shape({})
+    textStyle: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.number])
 };
 
 Hr.defaultProps = {
