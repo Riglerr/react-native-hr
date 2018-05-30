@@ -34,6 +34,11 @@ It also brings some extra functionality:
       <td><code>Object<code></td>
       <td><em>(Optional)</em> The color of the text</td>
     </tr>
+    <tr>
+      <td><code>textAlign<code></td>
+      <td><code>String<code></td>
+      <td><em>(Optional)</em> The align of the text [left,center,right]</td>
+    </tr>
   </tbody>
 </table>
 
@@ -67,6 +72,17 @@ It also brings some extra functionality:
    />
 ```
 
+
+####  textAlign
+```
+  <Hr text="line style"
+      textAlign="right"
+      lineStyle={{
+          backgroundColor: "blue",
+          height: 4
+       }}
+   />
+```
 
 #### Line with line style
 ```
