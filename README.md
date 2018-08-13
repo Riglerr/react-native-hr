@@ -1,6 +1,6 @@
 # react-native-hr
 
-=========
+
 react-native-hr brings htmls'  `<hr />`  to react-native. <br />
 It also brings some extra functionality:
   <ul>
@@ -8,6 +8,12 @@ It also brings some extra functionality:
     <li>Changing text style.</li>
     <li>Changing line style.</li>
   </ul>
+
+## Installation
+Add following line in you `package.json` as dependency
+
+`"react-native-hr": "git://github.com/Riglerr/react-native-hr.git#7c17c3ec47e14782db4c56b8cb0c35abd1d4b761"`
+
 
 ## Props
 <table>
